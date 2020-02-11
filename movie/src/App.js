@@ -16,10 +16,10 @@ function App() {
             <Col id="chapters">
             <p>Menu</p>
             </Col>
-            <Col>
+            <Col id="movie">
             <p>Movie</p>
             </Col>
-            <Col>
+            <Col id="messenger">
             <p> Messagerie</p>
             </Col>
           </Row>
