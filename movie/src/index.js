@@ -4,6 +4,7 @@ import './index.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import App from './App';
 import {Chapters} from './Chapters';
+import {Messages} from './Messages';
 import * as serviceWorker from './serviceWorker';
 
 
@@ -11,6 +12,7 @@ import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(<App />, document.getElementById('root'));
 ReactDOM.render(<Chapters />, document.getElementById('chapters'));
+ReactDOM.render(<Messages />, document.getElementById('messenger'));
 
 
 

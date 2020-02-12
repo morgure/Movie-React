@@ -1,5 +1,6 @@
 import React from "react";
-import { List } from "./ListComponents";
+import { List } from "./ListChaptersComponents";
+import ModalDialog from 'react-bootstrap/ModalDialog'
 
 export class Chapters extends React.Component {
   constructor(props) {
@@ -13,7 +14,8 @@ export class Chapters extends React.Component {
   }
 
   handleClick(index) {
-    this.setState({ selected: index });
+      //// TODO: chargement du chapitre
+      console.log("Chapite : " + index)
   }
 
   componentDidMount() {
@@ -32,13 +34,11 @@ export class Chapters extends React.Component {
     if (data_loaded) {
       return (
         <div>
-          <aside id="chapters">
             <List
               items={items["Chapters"]}
               fields={fields}
-              //onClick={this.handleClick.bind(this)}
+              onClick={this.handleClick.bind(this)}
             />
-          </aside>
         </div>
       );
     } else {
