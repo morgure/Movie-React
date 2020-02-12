@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Toast } from 'react-bootstrap';
 
 export class List extends React.Component {
     constructor(props) {
@@ -37,9 +38,14 @@ export class ListItem extends React.Component {
 
     render() {
         return (
-            <div>
-                <i>{new Intl.DateTimeFormat('fr-FR', {year: 'numeric', month: '2-digit',day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit'}).format(this.props.line_1)} de  <b>{this.props.line_2}</b></i>
-                <p>{this.props.line_3}</p>
+          <div>
+            <Toast>
+              <Toast.Header>
+                <strong className="mr-auto">{this.props.line_2}</strong>
+                <small>{new Intl.DateTimeFormat('fr-FR', {year: 'numeric', month: '2-digit',day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit'}).format(this.props.line_1)}</small>
+              </Toast.Header>
+              <Toast.Body>{this.props.line_3}</Toast.Body>
+              </Toast>
             </div>
         );
     }

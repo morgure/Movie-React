@@ -16,7 +16,7 @@ function App() {
             <Col id="chapters">
             <p>Menu</p>
             </Col>
-            <Col id="movie">
+            <Col id="movie" xs={6}>
             <p>Movie</p>
             </Col>
             <Col id="messenger">

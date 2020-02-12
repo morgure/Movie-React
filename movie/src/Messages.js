@@ -58,7 +58,6 @@ export class Messages extends React.Component {
     const message = { name: this.state.pseudo, message: this.state.message };
     this.ws.send(JSON.stringify(message));
     this.setState({
-      pseudo: "",
       message: ""
     });
     evt.preventDefault();
