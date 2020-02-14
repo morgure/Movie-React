@@ -11,7 +11,7 @@ export class List extends React.Component {
 
     render() {
         return (
-            <ul>
+            <ul style={{height: 400 + 'px', overflowY: "scroll",}}>
                 {this.props.items.map((item, index) => (
                     //item[this.props.fields[0]]
                     <ListItem line_1={item[this.props.fields[0]]} line_2={item[this.props.fields[1]]} line_3={item[this.props.fields[2]]} key={index}/>

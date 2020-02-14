@@ -74,6 +74,8 @@ export class Messages extends React.Component {
             <form>
                 <div>
                   <input type="text" value={this.state.pseudo} name="pseudo" onChange={this.handleChange} />
+                </div>
+                <div>
                   <input type="text" value={this.state.message} name="message" onChange={this.handleChange}/>
                 </div>
               <input type="submit" value="Envoyer" onClick={this.handleSubmit} />

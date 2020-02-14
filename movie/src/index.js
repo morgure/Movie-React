@@ -1,18 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import 'bootstrap/dist/css/bootstrap.css';
-import App from './App';
-import {Chapters} from './Chapters';
 import {Messages} from './Messages';
 import {Movie} from './Movie';
 import * as serviceWorker from './serviceWorker';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 
 
-ReactDOM.render(<App />, document.getElementById('root'));
-ReactDOM.render(<Messages />, document.getElementById('messenger'));
+ReactDOM.render(<Messages />, document.getElementById('chat'));
 ReactDOM.render(<Movie />, document.getElementById('movie'));
 
 

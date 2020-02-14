@@ -43,12 +43,12 @@ export class Movie extends React.Component {
     const { data_loaded, fields, items } = this.state;
     if (data_loaded) {
       return (
-          <Container>
+          <div>
             <Row>
               <h2>{items["Film"]["title"]}</h2>
             </Row>
             <Row>
-              <Col>
+              <Col xs={3} w={25}>
               <List items={items["Chapters"]} fields={fields} onClick={this.handleClick.bind(this)}/>
               </Col>
               <Col xs={9}>
@@ -57,7 +57,7 @@ export class Movie extends React.Component {
                 </Player>
               </Col>
             </Row>
-          </Container>
+          </div>
       );
     } else {
       console.log("Error")
