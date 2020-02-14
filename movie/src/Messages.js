@@ -21,6 +21,7 @@ export class Messages extends React.Component {
 
 
   componentDidMount() {
+    this.ws = new WebSocket(URL);
     console.log("Mount");
     this.ws.onopen = () => {
       console.log("connected");
@@ -42,7 +43,6 @@ export class Messages extends React.Component {
       this.setState({
           connected: false
       });
-    this.ws = new WebSocket(URL);
     };
   }
 
@@ -81,7 +81,6 @@ export class Messages extends React.Component {
           </div>
       );
     } else {
-      this.ws = new WebSocket(URL);
       console.log("Error")
       return (
         <div id="messenger">

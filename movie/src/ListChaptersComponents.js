@@ -17,7 +17,7 @@ export class List extends React.Component {
             <ul>
                 {this.props.items.map((item, index) => (
                     //item[this.props.fields[0]]
-                    <ListItem line_1={index} line_2={item[this.props.fields[1]]} key={index} onClick={this.handleClick.bind(this, index)}
+                    <ListItem line_1={index} line_2={item[this.props.fields[1]]} key={index} onClick={this.handleClick.bind(this, item[this.props.fields[0]])}
                     />
                 ))}
             </ul>

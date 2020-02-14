@@ -1,5 +1,6 @@
 import React from "react";
 import { List } from "./ListChaptersComponents";
+import {Movie} from "./Movie";
 
 export class Chapters extends React.Component {
   constructor(props) {
@@ -13,7 +14,7 @@ export class Chapters extends React.Component {
   }
 
   handleClick(index) {
-      //// TODO: chargement du chapitre
+    Movie.handleClick(index)
       console.log("Chapite : " + index)
   }
 
@@ -23,7 +24,7 @@ export class Chapters extends React.Component {
       .then(json => {
         this.setState({
           data_loaded: true,
-          items: json
+          items: json["Chapters"]
         });
       });
   }
@@ -34,7 +35,7 @@ export class Chapters extends React.Component {
       return (
         <div>
             <List
-              items={items["Chapters"]}
+              items={items}
               fields={fields}
               onClick={this.handleClick.bind(this)}
             />

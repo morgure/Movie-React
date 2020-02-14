@@ -11,10 +11,7 @@ function App() {
       <header className="App-header">
         <Container>
           <Row>
-            <Col id="chapters">
-            <p>Menu</p>
-            </Col>
-            <Col id="movie" xs={6}>
+            <Col id="movie" xs={8}>
             <p>Movie</p>
             </Col>
             <Col id="messenger">
