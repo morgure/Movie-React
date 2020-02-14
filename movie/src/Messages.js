@@ -1,7 +1,5 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { List } from "./ListMessagesComponents";
-import { Button } from 'react-bootstrap';
 
 const URL = "wss://imr3-react.herokuapp.com";
 export class Messages extends React.Component {
@@ -18,11 +16,41 @@ export class Messages extends React.Component {
     this.ws = new WebSocket(URL);
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    //this.ws.onopen = this.ws.onopen.bind(this);
+    //this.ws.onclose = this.ws.onclose.bind(this);
+    //this.ws.onmessage = this.ws.onmessage.bind(this);
   }
 
+/*
+  this.ws.onopen = () => {
+    //console.log("connected");
+    this.setState({
+        connected: true
+    });
+  };
+  this.ws.onclose = () => {
+    //console.log("disconnected, reconnect.");
+    this.setState({
+        connected: false
+    });
+  this.ws = new WebSocket(URL);
+  };
+  this.ws.onmessage = evt => {
+    let messages = JSON.parse(evt.data)
+    messages.map((message)=>
+      this.setState({
+        items : [ ...this.state.items, message]
+
+      })
+    )
+  };
+  */
+
+
   componentDidMount() {
+    console.log("Mount");
     this.ws.onopen = () => {
-      //console.log("connected");
+      console.log("connected");
       this.setState({
           connected: true
       });
@@ -35,17 +63,16 @@ export class Messages extends React.Component {
 
         })
       )
-
-
     };
     this.ws.onclose = () => {
-      //console.log("disconnected, reconnect.");
+      console.log("disconnected, reconnect.");
       this.setState({
           connected: false
       });
     this.ws = new WebSocket(URL);
     };
   }
+
 
   handleChange(evt){
     let name = evt.target.name;
@@ -81,9 +108,14 @@ export class Messages extends React.Component {
           </div>
       );
     } else {
+      this.ws = new WebSocket(URL);
+      console.log("Error")
       return (
-        <div>
-          <p>Loading data</p>
+        <div id="messenger">
+          <List items={items} fields={fields}/>
+          <form>
+            <p>Problème de connexion</p>
+          </form>
         </div>
       );
     }

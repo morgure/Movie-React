@@ -1,9 +1,7 @@
 import React from 'react';
-import logo from './logo.svg';
-import {  Container, Row, Col, Button } from 'react-bootstrap';
+import {  Container, Row, Col } from 'react-bootstrap';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Websocket from 'react-websocket';
 
 function App() {
   return (

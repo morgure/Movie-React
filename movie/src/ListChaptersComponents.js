@@ -2,9 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 
 export class List extends React.Component {
-    constructor(props) {
-        super(props);
-    }
     static propTypes = {
         items: PropTypes.array.isRequired,
         fields: PropTypes.arrayOf(String).isRequired,

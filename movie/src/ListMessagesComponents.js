@@ -3,9 +3,7 @@ import PropTypes from "prop-types";
 import { Toast } from 'react-bootstrap';
 
 export class List extends React.Component {
-    constructor(props) {
-        super(props);
-    }
+
     static propTypes = {
         items: PropTypes.array.isRequired,
         fields: PropTypes.arrayOf(String).isRequired,
@@ -40,7 +38,7 @@ export class ListItem extends React.Component {
         return (
           <div>
             <Toast>
-              <Toast.Header>
+              <Toast.Header closeButton={false}>
                 <strong className="mr-auto">{this.props.line_2}</strong>
                 <small>{new Intl.DateTimeFormat('fr-FR', {year: 'numeric', month: '2-digit',day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit'}).format(this.props.line_1)}</small>
               </Toast.Header>

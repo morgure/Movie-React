@@ -1,6 +1,5 @@
 import React from "react";
 import { List } from "./ListChaptersComponents";
-import ModalDialog from 'react-bootstrap/ModalDialog'
 
 export class Chapters extends React.Component {
   constructor(props) {
